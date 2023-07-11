@@ -1,0 +1,33 @@
+\makeatletter
+\def\cover{%
+	\thispagestyle{empty}%
+	\pagenumbering{roman}
+	\setcounter{page}{1}
+	\begin{center}
+		\begin{singlespace}
+			\vspace{1.5cm}
+      \MakeUppercase{\normalfont\bfseries \@booktitle}\\
+			\vspace{1.0cm}
+			\fontsize{14pt}{16pt}\selectfont\MakeUppercase{\normalfont\bfseries\@titleidn}\par\nobreak
+			\vfill
+			\includegraphics[width=5.6cm]{pictures/university-logo}
+			\vfill
+			{\normalfont
+				\bfseries Disusun oleh:\\
+				\MakeUppercase{\normalfont\bfseries\underline{\@fullname}}\\
+				\MakeUppercase{\normalfont\bfseries \@nim}}\\
+			\vspace{1.5cm}
+			{\normalfont
+				\MakeUppercase{\normalfont\bfseries PROGRAM STUDI \@degree\space\@major}\\
+				\MakeUppercase{\normalfont\bfseries\@dept}\\ 
+        \MakeUppercase{\normalfont\bfseries\@faculty\space\@university}\\
+				\MakeUppercase{\normalfont\bfseries\@city}\\
+				\vspace{0.5cm}
+				{\normalfont\bfseries\@yearsubmit}}\\
+		\end{singlespace}
+	\end{center}
+}
+\makeatother
+
+\cover
+

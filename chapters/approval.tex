@@ -1,0 +1,37 @@
+\makeatletter
+\def\approvalpage{%
+	\chapter*{\approvalname}%
+	\begin{center}
+		\begin{doublespace}
+			\vspace{0.7cm}
+			\MakeUppercase{\normalfont\bfseries\expandafter{\@booktitle}}\\
+			\vspace{0.7cm}
+			\MakeUppercase{\normalfont\bfseries\@titleidn}\par\nobreak
+			\vspace{0.5cm}
+			\vspace{1.0cm}
+			\textbf{Disusun oleh:}\\
+			\begin{singlespace}
+				\underline{\bfseries \@fullname}\\
+				\textbf{\@nim}\\
+			\end{singlespace}
+			\vspace{1.0cm}
+			Telah disetujui dan disahkan oleh dosen pembimbing\\
+			pada tanggal \@approvaldate
+			\vspace{1.0cm}
+			\begin{singlespace}
+				\begin{tabular}{ccc}
+					Ketua Program Studi \@major            &              & Dosen Pembimbing           \\
+					\vspace{1cm}                           & \vspace{1cm} & \vspace{1cm}               \\
+					\textbf{\underline{\@firstsupervisor}} &              &
+					\textbf{\underline{\@secondsupervisor}}                                            \\
+					\bfseries NIP. \@firstnip              &              & \bfseries NIP. \@secondnip
+				\end{tabular}
+			\end{singlespace}
+
+		\end{doublespace}
+	\end{center}
+	\addcontentsline{toc}{chapter}{\approvalname}
+}
+\makeatother
+
+\approvalpage
