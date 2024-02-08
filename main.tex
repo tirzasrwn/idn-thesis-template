@@ -1,0 +1,74 @@
+% main.tex
+\documentclass{idn_thesis_template}
+
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption} % Consider removing one of the duplicate package imports
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage[titles]{tocloft}
+
+% Customize table of contents entries for figures and tables
+\renewcommand\cftfigpresnum{Gambar\ }
+\renewcommand\cfttabpresnum{Tabel\  }
+
+% Configure table captions
+\captionsetup[table]{singlelinecheck=false}
+\newlength{\mylenf}
+\settowidth{\mylenf}{\cftfigpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\mylenf+2em}
+\setlength{\cfttabnumwidth}{\dimexpr\mylenf+2em}
+
+% Suppress underfull \hbox badness warnings
+\hbadness=99999
+
+% Include custom definitions from a separate file
+\input{chapters/definitions.tex}
+
+\begin{document}
+
+% Include various chapters
+\input{chapters/cover.tex}
+\input{chapters/second_cover.tex}
+\input{chapters/approval.tex}
+\input{chapters/statement.tex}
+\input{chapters/acknowledgment.tex}
+\input{chapters/preface.tex}
+
+% Table of Contents, List of Tables, and List of Figures
+\tableofcontents
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\listoftables
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+\listoffigures
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+
+% Abstracts in both Indonesian and English
+\input{chapters/abstractidn.tex}
+\input{chapters/abstracteng.tex}
+
+% Start the main content with Arabic page numbering
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+% Include individual chapters
+\input{chapters/_01.tex}
+\input{chapters/_02.tex}
+\input{chapters/_03.tex}
+\input{chapters/_04.tex}
+\input{chapters/_05.tex}
+
+% Bibliography
+\bibliographystyle{IEEEtran}
+\bibliography{references.bib}
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+
+\end{document}
+
